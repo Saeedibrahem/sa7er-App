@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const TestimonialsSection = () => {
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -51,187 +50,65 @@ const TestimonialsSection = () => {
         setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: 0.8,
-                staggerChildren: 0.2
-            }
-        }
-    };
-
-    const cardVariants = {
-        hidden: { opacity: 0, scale: 0.8 },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 0.5,
-                ease: "easeOut"
-            }
-        },
-        exit: {
-            opacity: 0,
-            scale: 0.8,
-            transition: {
-                duration: 0.3
-            }
-        }
-    };
-
-    const slideVariants = {
-        enter: (direction) => ({
-            x: direction > 0 ? 300 : -300,
-            opacity: 0
-        }),
-        center: {
-            zIndex: 1,
-            x: 0,
-            opacity: 1
-        },
-        exit: (direction) => ({
-            zIndex: 0,
-            x: direction < 0 ? 300 : -300,
-            opacity: 0
-        })
-    };
-
     return (
-        <motion.div 
-            id="testimonials" 
-            className="testimonials-section"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-        >
+        <div id="testimonials" className="testimonials-section">
             <div className="testimonials-container">
-                <motion.div 
-                    className="testimonials-header"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                >
-                    <motion.h1 
-                        className="testimonials-title"
-                        variants={containerVariants}
-                    >
-                        آراء عملائنا
-                    </motion.h1>
-                    <motion.p 
-                        className="testimonials-subtitle"
-                        variants={containerVariants}
-                    >
+                <div className="testimonials-header">
+                    <h1 className="testimonials-title">آراء عملائنا</h1>
+                    <p className="testimonials-subtitle">
                         اكتشف ما يقوله عملاؤنا عن تجربتهم مع عطور ساحر
-                    </motion.p>
-                </motion.div>
+                    </p>
+                </div>
 
-                <motion.div 
-                    className="testimonials-content"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                >
-                    <AnimatePresence mode="wait">
-                        <motion.div 
-                            key={currentTestimonial}
-                            className="testimonial-card"
-                            variants={cardVariants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="exit"
-                            custom={1}
-                        >
-                            <motion.div 
-                                className="testimonial-rating"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
-                            >
-                                {[...Array(testimonials[currentTestimonial].rating)].map((_, index) => (
-                                    <motion.span 
-                                        key={index} 
-                                        className="star"
-                                        initial={{ opacity: 0, scale: 0 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ 
-                                            duration: 0.3, 
-                                            delay: 0.3 + index * 0.1 
-                                        }}
-                                    >
-                                        ★
-                                    </motion.span>
-                                ))}
-                            </motion.div>
-                            
-                            <motion.blockquote 
-                                className="testimonial-text"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.4 }}
-                            >
-                                "{testimonials[currentTestimonial].text}"
-                            </motion.blockquote>
-                            
-                            <motion.div 
-                                className="testimonial-author"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.5 }}
-                            >
-                                <h4 className="author-name">{testimonials[currentTestimonial].name}</h4>
-                                <p className="author-location">{testimonials[currentTestimonial].location}</p>
-                            </motion.div>
-                        </motion.div>
-                    </AnimatePresence>
+                <div className="testimonials-content">
+                    <div className="testimonial-card">
+                        <div className="testimonial-rating">
+                            {[...Array(testimonials[currentTestimonial].rating)].map((_, index) => (
+                                <span key={index} className="star">★</span>
+                            ))}
+                        </div>
+                        
+                        <blockquote className="testimonial-text">
+                            "{testimonials[currentTestimonial].text}"
+                        </blockquote>
+                        
+                        <div className="testimonial-author">
+                            <h4 className="author-name">{testimonials[currentTestimonial].name}</h4>
+                            <p className="author-location">{testimonials[currentTestimonial].location}</p>
+                        </div>
+                    </div>
 
-                    <motion.div 
-                        className="testimonial-controls"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.6 }}
-                    >
-                        <motion.button 
+                    <div className="testimonial-controls">
+                        <button 
                             className="testimonial-btn prev-btn" 
                             onClick={prevTestimonial}
                             aria-label="Previous testimonial"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
                         >
                             ‹
-                        </motion.button>
+                        </button>
                         
                         <div className="testimonial-dots">
                             {testimonials.map((_, index) => (
-                                <motion.button
+                                <button
                                     key={index}
                                     className={`dot ${index === currentTestimonial ? 'active' : ''}`}
                                     onClick={() => setCurrentTestimonial(index)}
                                     aria-label={`Go to testimonial ${index + 1}`}
-                                    whileHover={{ scale: 1.2 }}
-                                    whileTap={{ scale: 0.8 }}
                                 />
                             ))}
                         </div>
                         
-                        <motion.button 
+                        <button 
                             className="testimonial-btn next-btn" 
                             onClick={nextTestimonial}
                             aria-label="Next testimonial"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
                         >
                             ›
-                        </motion.button>
-                    </motion.div>
-                </motion.div>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 
