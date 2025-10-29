@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 const SkillsSection = () => {
     const skillsRef = useRef(null);
@@ -42,52 +43,68 @@ const SkillsSection = () => {
     }, []);
 
     return (
-        <div id="features" className="skills-section">
+        <motion.div 
+            id="features" 
+            className="skills-section"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
             <div className="skills-container">
-                <div className="skills-content">
-                    <h1 className="skills-title">لماذا تختار ساحر؟</h1>
-                    <p className="skills-intro">
+                <motion.div 
+                    className="skills-content"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <motion.h1 className="skills-title" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>لماذا تختار ساحر؟</motion.h1>
+                    <motion.p className="skills-intro" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
                         نقدم لك تجربة عطرية فاخرة تجمع بين الجودة العالية، الثبات الطويل، والتغليف الأنيق.
                         اختر من تشكيلتنا ما يناسب شخصيتك، وتمتع برائحة لا تُنسى.
-                    </p>
+                    </motion.p>
 
                     <div className="skills-grid">
-                        <div className="focus-section">
+                        <motion.div className="focus-section" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
                             <h3 className="focus-title">مميزاتنا</h3>
                             <div className="focus-line"></div>
                             <ul className="focus-list">
                                 {focusAreas.map((area, index) => (
-                                    <li key={index} className="focus-item">
+                                    <motion.li key={index} className="focus-item" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.08 }}>
                                         <span className="focus-icon">→</span>
                                         {area}
-                                    </li>
+                                    </motion.li>
                                 ))}
                             </ul>
-                        </div>
+                        </motion.div>
 
-                        <div className="technical-skills" ref={skillsRef}>
+                        <motion.div className="technical-skills" ref={skillsRef} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
                             <h3 className="technical-title">TECHNICAL SKILLS</h3>
                             <div className="skills-list">
                                 {technicalSkills.map((skill, index) => (
-                                    <div key={index} className="skill-item">
+                                    <motion.div key={index} className="skill-item" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: index * 0.08 }}>
                                         <div className="skill-header">
                                             <span className="skill-name">{skill.name}</span>
                                             <span className="skill-percentage">{skill.percentage}%</span>
                                         </div>
                                         <div className="progress-container">
-                                            <div
+                                            <motion.div
                                                 className="progress-bar"
-                                                style={{ width: `${skill.percentage}%` }}
-                                            ></div>
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: `${skill.percentage}%` }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 1.2, ease: 'easeOut', delay: 0.1 }}
+                                            ></motion.div>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
