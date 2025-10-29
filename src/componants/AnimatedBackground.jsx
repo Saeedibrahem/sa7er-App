@@ -12,7 +12,17 @@ const AnimatedBackground = () => {
     }));
 
     return (
-        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div 
+            className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0"
+            style={{
+                width: '100vw',
+                height: '100vh',
+                left: 0,
+                top: 0,
+                right: 0,
+                bottom: 0
+            }}
+        >
             {floatingElements.map((element) => (
                 <motion.div
                     key={element.id}
