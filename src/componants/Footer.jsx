@@ -25,7 +25,7 @@ const Footer = () => {
                         </div>
                         <div className="contact-item" onClick={handlePhoneClick}>
                             <span className="contact-icon">📞</span>
-                            <span className="contact-text">011-0047-1872</span>
+                            <span className="contact-text">011-5039-0913</span>
                         </div>
                     </div>
 
