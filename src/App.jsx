@@ -10,9 +10,12 @@ import heroImage from "./assets/img/sahir-Eau-de-Parfum.jpg";
 import MainSection from "./componants/MainSection";
 import AnimatedBackground from "./componants/AnimatedBackground";
 import ContactUs from "./componants/ContactUs";
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   return (
     <div className="app">
+      <Analytics />
       <AnimatedBackground />
       <Header />
       <HeroSection heroImage={heroImage} />
