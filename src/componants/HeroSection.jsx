@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 
 const HeroSection = ({ heroImage }) => {
+    const { t, i18n } = useTranslation();
     const handleContactClick = () => {
         window.open("https://wa.me/+201554102196");
     };
@@ -11,9 +13,9 @@ const HeroSection = ({ heroImage }) => {
     };
 
     return (
-        <div className="hero-section">
-            <motion.div 
-                id="home" 
+        <div className="hero-section" >
+            <motion.div
+                id="home"
                 className="hero-portrait-section"
                 initial={{ opacity: 0, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -22,10 +24,12 @@ const HeroSection = ({ heroImage }) => {
             >
                 <div
                     className="hero-background"
-                    style={{ backgroundImage: `url(${heroImage})` }}
+                    style={{ 
+                        backgroundImage: `url(${heroImage})`
+                    }}
                 >
                     <div className="hero-overlay">
-                        <motion.div 
+                        <motion.div
                             className="hero-content"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -33,25 +37,25 @@ const HeroSection = ({ heroImage }) => {
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         >
                             <motion.h1 className="hero-name" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
-                                ساحر
+                                {t('hero.brandName')}
                             </motion.h1>
                             <motion.p className="hero-profession" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
-                                Saher – Perfume for Men
+                                {t('hero.tagline')}
                             </motion.p>
                             <motion.p className="hero-subtitle" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
-                                عطور رجالية فاخرة بثبات يدوم
+                                {t('hero.subtitle')}
                             </motion.p>
-                            <motion.button 
-                                className="contact-me-btn" 
+                            <motion.button
+                                className="contact-me-btn"
                                 onClick={handleContactClick}
                                 whileHover={{ scale: 1.03 }}
                                 whileTap={{ scale: 0.96 }}
-                                initial={{ opacity: 0, y: 10 }} 
-                                whileInView={{ opacity: 1, y: 0 }} 
-                                viewport={{ once: true }} 
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.4 }}
                             >
-                                تسوق الآن
+                                {t('hero.shopNow')}
                             </motion.button>
                         </motion.div>
                     </div>
@@ -59,8 +63,8 @@ const HeroSection = ({ heroImage }) => {
             </motion.div>
 
             {/* About Me Section */}
-            <motion.div 
-                id="about" 
+            <motion.div
+                id="about"
                 className="about-section"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -70,16 +74,16 @@ const HeroSection = ({ heroImage }) => {
                 <div className="about-container">
                     <div className="about-content-wrapper">
                         <motion.div className="about-title-section" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                            <h1 className="about-title">عن ساحر</h1>
-                            <p className="about-tagline">ساحر – لأن كل عطر يحكي قصة رجل</p>
+                            <h1 className="about-title">{t('hero.aboutTitle')}</h1>
+                            <p className="about-tagline">{t('hero.aboutTagline')}</p>
                         </motion.div>
                         <motion.div className="about-text-section" initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
                             <div className="about-content">
                                 <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
-                                    في ساحر نقدم تشكيلة مختارة من العطور الرجالية الفاخرة بتركيز عالٍ وثبات طويل. نصمم روائح تجمع بين الأصالة العربية والفخامة العالمية لتناسب ذوق الرجل العصري.
+                                    {t('hero.aboutText1')}
                                 </motion.p>
                                 <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
-                                    كل عطر من ساحر يُمزج بعناية ليمنحك حضورًا طاغيًا يدوم طوال اليوم. اختر عطرك المفضل من تشكيلة متنوعة تناسب كل مناسبة.
+                                    {t('hero.aboutText2')}
                                 </motion.p>
                                 <motion.button
                                     className="download-resume-btn"
@@ -91,7 +95,7 @@ const HeroSection = ({ heroImage }) => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.4 }}
                                 >
-                                    تواصل عبر واتساب
+                                    {t('hero.contactWhatsapp')}
                                 </motion.button>
                             </div>
                         </motion.div>

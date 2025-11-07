@@ -1,0 +1,130 @@
+{
+  "projectName": "Sahir",
+  "home": "Home",
+  "collection": "Collection",
+  "feature": "Features",
+  "about": "About",
+  "contact": "Contact",
+  "orderViaWhatsapp": "Order via WhatsApp",
+  "developer": "Developed by",
+  "engineer": "Eng.",
+  "copyright": "All rights reserved",
+  "year": "2025",
+  "saeed": "Saeed Ebrahim",
+  "hero": {
+    "brandName": "Sahir",
+    "tagline": "Sahir – Luxury Perfumes",
+    "subtitle": "Luxury perfumes with lasting presence",
+    "shopNow": "Shop Now",
+    "aboutTitle": "About Sahir",
+    "aboutTagline": "Sahir – Where every fragrance tells a story",
+    "aboutText1": "At Sahir, we offer a curated collection of luxury perfumes with high concentration and long-lasting presence. We design fragrances that blend Arabic authenticity with global elegance to suit modern taste.",
+    "aboutText2": "Each Sahir fragrance is carefully blended to give you a powerful presence that lasts all day. Choose your favorite fragrance from our diverse collection that suits every occasion.",
+    "contactWhatsapp": "Contact via WhatsApp"
+  },
+  "features": {
+    "title": "Why Choose Sahir?",
+    "intro": "We offer you a luxurious fragrance experience that combines high quality, long-lasting presence, and elegant packaging. Choose from our collection what suits your personality, and enjoy an unforgettable fragrance.",
+    "featuresTitle": "Our Features",
+    "feature1": "High concentration and lasting presence",
+    "feature2": "Luxury fragrance extracts",
+    "feature3": "Arabic and international fragrances",
+    "feature4": "Elegant gift packaging",
+    "feature5": "Fast shipping to all provinces",
+    "feature6": "14-day return guarantee"
+  },
+  "testimonials": {
+    "title": "Customer Reviews",
+    "subtitle": "Discover what our customers say about their experience with Sahir perfumes",
+    "testimonial1": {
+      "name": "Ahmed Mohamed",
+      "location": "Cairo",
+      "text": "Sahir perfumes are truly luxurious with very strong lasting power. Each fragrance has its unique character. I highly recommend them!"
+    },
+    "testimonial2": {
+      "name": "Mohamed Ali",
+      "location": "Alexandria",
+      "text": "Excellent quality and reasonable prices. Elegant packaging and fast shipping. I will definitely order again."
+    },
+    "testimonial3": {
+      "name": "Khaled Ahmed",
+      "location": "Riyadh",
+      "text": "The best men's perfumes I've tried. The fragrance lasts all day and the concentration is very high."
+    },
+    "testimonial4": {
+      "name": "Abdullah Saad",
+      "location": "Dubai",
+      "text": "Excellent customer service and helpful advice for choosing the right fragrance. Thank you!"
+    }
+  },
+  "products": {
+    "title": "Sahir Collection",
+    "subtitle": "Carefully selected fragrances that suit your taste and different occasions",
+    "orderNow": "Order Now",
+    "whatsappMessage": "Hello, I would like to inquire about",
+    "ml": "ml",
+    "product1": {
+      "title": "Sahir Black",
+      "category": "Oud & Musk",
+      "description": "Luxurious dark fragrance with high lasting power, perfect for evenings.",
+      "tech1": "Strong lasting",
+      "tech2": "High concentration",
+      "tech3": "100 ml"
+    },
+    "product2": {
+      "title": "Sahir Silver",
+      "category": "Citrus Woody",
+      "description": "Modern freshness with a woody touch for day and work.",
+      "tech1": "Freshness",
+      "tech2": "High concentration",
+      "tech3": "100 ml"
+    },
+    "product3": {
+      "title": "Sahir Blue",
+      "category": "Marine Aromatic",
+      "description": "A sense of freedom and open air that lasts long.",
+      "tech1": "Medium lasting",
+      "tech2": "High concentration",
+      "tech3": "100 ml"
+    },
+    "product4": {
+      "title": "Sahir Oud",
+      "category": "Oriental Oud",
+      "description": "Warm oriental depth with strong and luxurious presence.",
+      "tech1": "Luxury",
+      "tech2": "High concentration",
+      "tech3": "100 ml"
+    },
+    "product5": {
+      "title": "Sahir Classic",
+      "category": "Floral Woody",
+      "description": "Elegant daily signature that suits all occasions.",
+      "tech1": "Great balance",
+      "tech2": "High concentration",
+      "tech3": "100 ml"
+    },
+    "product6": {
+      "title": "Sahir Platinum",
+      "category": "Amber & Vanilla",
+      "description": "Attractive warmth with luxurious gourmand touch.",
+      "tech1": "Strong presence",
+      "tech2": "High concentration",
+      "tech3": "100 ml"
+    }
+  },
+  "contactForm": {
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "An error occurred while sending. Please try again.",
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email address",
+    "subjectRequired": "Subject is required",
+    "messageRequired": "Message is required"
+  }
+}

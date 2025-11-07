@@ -1,36 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const TestimonialsSection = () => {
+    const { t } = useTranslation();
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
     const testimonials = [
         {
             id: 1,
-            name: 'أحمد محمد',
-            location: 'القاهرة',
-            text: 'عطور ساحر بجد فاخرة وثباتها قوي جداً. كل عطر له شخصيته المميزة. أنصح بيهم بشدة!',
+            name: t('testimonials.testimonial1.name'),
+            location: t('testimonials.testimonial1.location'),
+            text: t('testimonials.testimonial1.text'),
             rating: 5
         },
         {
             id: 2,
-            name: 'محمد علي',
-            location: 'الإسكندرية',
-            text: 'جودة ممتازة وأسعار مناسبة. التغليف أنيق والشحن سريع. سأطلب مرة تانية أكيد.',
+            name: t('testimonials.testimonial2.name'),
+            location: t('testimonials.testimonial2.location'),
+            text: t('testimonials.testimonial2.text'),
             rating: 5
         },
         {
             id: 3,
-            name: 'خالد أحمد',
-            location: 'الرياض',
-            text: 'أفضل عطور رجالية جربتها. الرائحة تدوم طوال اليوم والتركيز عالي جداً.',
+            name: t('testimonials.testimonial3.name'),
+            location: t('testimonials.testimonial3.location'),
+            text: t('testimonials.testimonial3.text'),
             rating: 5
         },
         {
             id: 4,
-            name: 'عبدالله سعد',
-            location: 'دبي',
-            text: 'خدمة عملاء ممتازة ونصائح مفيدة لاختيار العطر المناسب. شكراً لكم!',
+            name: t('testimonials.testimonial4.name'),
+            location: t('testimonials.testimonial4.location'),
+            text: t('testimonials.testimonial4.text'),
             rating: 5
         }
     ];
@@ -68,9 +70,9 @@ const TestimonialsSection = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h1 className="testimonials-title">آراء عملائنا</h1>
+                    <h1 className="testimonials-title">{t('testimonials.title')}</h1>
                     <p className="testimonials-subtitle">
-                        اكتشف ما يقوله عملاؤنا عن تجربتهم مع عطور ساحر
+                        {t('testimonials.subtitle')}
                     </p>
                 </motion.div>
 
